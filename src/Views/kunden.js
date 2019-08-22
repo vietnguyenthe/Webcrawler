@@ -6,6 +6,8 @@ import gastank from "../pictures/gastank.png";
 import "../styles/kunden.css";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
+import axios from 'axios';
+
 
 export default class kunden extends Component {
 
@@ -32,6 +34,13 @@ export default class kunden extends Component {
     submitHandler = e => {
         e.preventDefault()
         console.log(this.state)
+        axios.post('https://jsonplaceholder.typicode.com/posts', this.state)
+            .then(response => {
+                console.log(response)
+                })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
 
