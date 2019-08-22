@@ -45,7 +45,7 @@ export default class App extends Component {
                             <Route path={"/ueberUns"} component={ueberUns}/>
                             <Route path={"/unternehmen"} component={unternehmen}/>
                             <Route path={"/preisvergleichKunden"} component={preisvergleichKunden}/>
-                            <Route path={"eingabeUnternehmen"} component={eingabeUnternehmen}/>
+                            <Route path={"/eingabeUnternehmen"} component={eingabeUnternehmen}/>
                         </div>
                 </div>
             </HashRouter>
