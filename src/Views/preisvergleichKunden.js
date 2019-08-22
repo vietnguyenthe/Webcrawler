@@ -2,9 +2,6 @@ import React, {Component} from "react"
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import "../styles/preisvergleich.css"
 
-export default GoogleApiWrapper({
-    apiKey: 'TOKEN HERE'
-})(MapContainer);
 
 export default class preisvergleichKunden extends Component {
     render() {
