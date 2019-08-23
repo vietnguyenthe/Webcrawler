@@ -7,7 +7,8 @@ import "../styles/kunden.css";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import axios from 'axios';
-
+import {Route, HashRouter, NavLink} from "react-router-dom";
+import preisvergleichKunden from "./preisvergleichKunden";
 
 export default class kunden extends Component {
 
@@ -59,6 +60,7 @@ export default class kunden extends Component {
                 </Row>
 
                 <div className="selected-behltergrsse" >
+                    <HashRouter>
                     <form onSubmit={this.submitHandler}>
                         <div onChange={this.setBehaelter.bind(this)}>
                     <Row>
@@ -118,13 +120,17 @@ export default class kunden extends Component {
                         <Col>
                             <br/>
                             <div className="text-center">
-                                <Button type="submit" className="btn btn-primary" >Anbieter finden</Button>
+                                <Button type="submit" className="btn btn-primary" >
+                                    <NavLink to="/preisvergleichKunden" style={{ color: 'white' }} text-decoration= "none">
+                                        Anbieter finden</NavLink></Button>
                             </div>
                         </Col>
                         <Col/>
                     </Row>
                     <Row><br/></Row>
+                        <Route path={"/preisvergleichKunden"} component={preisvergleichKunden}/>
                     </form>
+                    </HashRouter>
                 </div>
 
             </div>

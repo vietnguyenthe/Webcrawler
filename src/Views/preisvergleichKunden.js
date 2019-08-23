@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import "../styles/preisvergleich.css"
+import axios from "axios"
 
 
 export default class preisvergleichKunden extends Component {
@@ -14,14 +15,16 @@ export default class preisvergleichKunden extends Component {
 
     ladeAnbieter = () => {
         let anbieterAusDB = []
-        fetch("https://chrome-extension://ehafadccdcdedbhcbddihehiodgcddpl/index.html")
+        axios.post("http://localhost:8080/preis/anfrage", this.state)
             .then(response => response.json())
             .then(payload => {
                 payload.map(firma => {
                     let unternehmen = {
                         name: firma.name,
-                        preis: firma.preis,
+                        adresse: firma.adresse,
                         plz: firma.plz,
+                        ort: firma.ort,
+                        preis: firma.preis,
                     }
                     anbieterAusDB.push(unternehmen)
                     return unternehmen //nicht nötig, verhindern aber Ausgabe einer Warning
@@ -45,7 +48,8 @@ export default class preisvergleichKunden extends Component {
             anbieterDaten.push(
                 <article className="anbieterDaten">
                     <h2>{unternehmen.name}</h2>
-                    <h3>Preis: {unternehmen.preis} PLZ:{unternehmen.plz}</h3>
+                    <h3>Preis: {unternehmen.adresse} PLZ:{unternehmen.plz}</h3>
+                    <h3>Preis: {unternehmen.ort} PLZ:{unternehmen.preis}</h3>
                 </article>
             )
         }
