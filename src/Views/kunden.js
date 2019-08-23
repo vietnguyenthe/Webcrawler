@@ -34,7 +34,7 @@ export default class kunden extends Component {
     submitHandler = e => {
         e.preventDefault()
         console.log(this.state)
-        axios.post('https://jsonplaceholder.typicode.com/posts', this.state)
+        axios.post('http://localhost:8080/preis/anfrage', this.state)
             .then(response => {
                 console.log(response)
                 })
@@ -66,21 +66,21 @@ export default class kunden extends Component {
                         <Col/>
                         <Col>
                             <label>
-                                <input type="radio" name="behaelter" value="1.2 Tonnen" id="1.2t" />
+                                <input type="radio" name="behaelter" value="preis2700liter" id="1.2t" />
                                 <Image src={gastank} height="120" width="120"/>
                                 <br/><h6 className="text-center">1,2 Tonnen</h6>
                             </label>
                         </Col>
                         <Col>
                             <label>
-                                <input type="radio" name="behaelter" value="2.1 Tonnen" id="2.1t" />
+                                <input type="radio" name="behaelter" value="preis4850liter" id="2.1t" />
                                 <Image src={gastank} height="120" width="120"/>
                                 <br/><h6 className="text-center">2,1 Tonnen</h6>
                             </label>
                         </Col>
                         <Col>
                             <label>
-                                <input type="radio" name="behaelter" value="2.9 Tonnen" id="2.9t" />
+                                <input type="radio" name="behaelter" value="preis6400liter" id="2.9t" />
                                 <Image src={gastank} height="120" width="120"/>
                                 <br/><h6 className="text-center">2,9 Tonnen</h6>
                             </label>
