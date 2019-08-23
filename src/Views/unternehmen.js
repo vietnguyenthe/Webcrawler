@@ -1,11 +1,13 @@
 import React, {Component} from "react";
 import "../styles/unternehmen.css"
-
+import {Route, HashRouter, Link} from "react-router-dom";
+import eingabeUnternehmen from "./eingabeUnternehmen";
 
 export default class unternehmen extends Component {
     render() {
         return (
-         <div>
+         <HashRouter>
+            <div>
                  <div className="container">
                      <div className="d-flex justify-content-center h-100">
                          <div className="card">
@@ -42,7 +44,8 @@ export default class unternehmen extends Component {
                              </div>
                              <div className="card-footer">
                                  <div className="d-flex justify-content-center links">
-                                     Sie haben noch keine Anmeldedaten?<a href="#">Anmeldung</a>
+                                     Sie haben noch keine Anmeldedaten?
+                                     <a><Link to="/eingabeUnternehmen">Anmeldung</Link></a>
                                  </div>
                                  <div className="d-flex justify-content-center">
                                      <a href="#">Passwort vergessen?</a>
@@ -51,7 +54,9 @@ export default class unternehmen extends Component {
                          </div>
                      </div>
                  </div>
+                <Route path={"/eingabeUnternehmen"} component={eingabeUnternehmen}/>
          </div>
+         </HashRouter>
         )
     }
 }
