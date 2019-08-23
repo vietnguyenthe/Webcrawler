@@ -7,6 +7,7 @@ import "../styles/kunden.css";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import axios from 'axios';
+import {Redirect } from 'react-router-dom'
 
 
 export default class kunden extends Component {
@@ -38,9 +39,14 @@ export default class kunden extends Component {
             .then(response => {
                 console.log(response)
                 })
+
             .catch(error => {
                 console.log(error)
             })
+        // this.props.history.push("/preisvergleichKunden")
+        // window.location.href = "http://localhost:3000/preisvergeichKunden";
+        // return <Redirect to={"/preisvergleichKunden"}/>
+
     }
 
 
@@ -118,7 +124,9 @@ export default class kunden extends Component {
                         <Col>
                             <br/>
                             <div className="text-center">
-                                <Button type="submit" className="btn btn-primary" >Anbieter finden</Button>
+
+                                    <Button type="submit" className="btn btn-primary" onclick="{/preisvergleichKunden}" > Anbieter finden</Button>
+
                             </div>
                         </Col>
                         <Col/>
@@ -126,6 +134,7 @@ export default class kunden extends Component {
                     <Row><br/></Row>
                     </form>
                 </div>
+
 
             </div>
         )
