@@ -49,12 +49,12 @@ export default class kunden extends Component {
         return (
             <div>
                 <Row>
-                    <Col><h3 class="text-center">Wählen Sie die Optionen für den Preisvergleich aus:
+                    <Col><h3 className="text-center">Wählen Sie die Optionen für den Preisvergleich aus:
                     </h3></Col>
                 </Row>
                 <Row>
                     <Col/>
-                    <Col><h4 class="text-center"><br/>1. Behältergröße</h4></Col>
+                    <Col><h4 className="text-center"><br/>1. Behältergröße</h4></Col>
                     <Col/>
                 </Row>
 
@@ -68,7 +68,7 @@ export default class kunden extends Component {
                             <label>
                                 <input type="radio" name="behaelter" value="1.2 Tonnen" id="1.2t" />
                                 <Image src={gastank} height="120" width="120"/>
-                                <br/><h6 class="text-center">1,2 Tonnen</h6>
+                                <br/><h6 className="text-center">1,2 Tonnen</h6>
                             </label>
                         </Col>
                         <Col>
@@ -91,7 +91,7 @@ export default class kunden extends Component {
                         </div>
                     <Row>
                         <Col/>
-                        <Col><h4 class="text-center"><br/>2. Postleitzahl</h4></Col>
+                        <Col><h4 className="text-center"><br/>2. Postleitzahl</h4></Col>
                         <Col/>
                     </Row>
                     <Row>
@@ -110,15 +110,15 @@ export default class kunden extends Component {
                     </Row>
                     <Row>
                         <Col/>
-                        <Col><h4 class="text-center"><br/>3. Losschicken</h4></Col>
+                        <Col><h4 className="text-center"><br/>3. Losschicken</h4></Col>
                         <Col/>
                     </Row>
                     <Row>
                         <Col/>
                         <Col>
                             <br/>
-                            <div class="text-center">
-                                <Button type="submit" class="btn btn-primary" >Anbieter finden</Button>
+                            <div className="text-center">
+                                <Button type="submit" className="btn btn-primary" >Anbieter finden</Button>
                             </div>
                         </Col>
                         <Col/>
