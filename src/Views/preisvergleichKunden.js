@@ -29,11 +29,6 @@ export default class preisvergleichKunden extends Component {
         const {anbieterListe } = this.state
         return (
             <div>
-                <Map
-                    google={this.props.google}
-                    zoom={8}
-                    initialCenter={{ lat: 47.444, lng: -122.176}}
-                />
 
                 <br/>
             Preisvergleich
