@@ -7,8 +7,9 @@ import "../styles/kunden.css";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import axios from 'axios';
-import {Route, HashRouter, NavLink} from "react-router-dom";
+import {Link,Route} from "react-router-dom";
 import preisvergleichKunden from "./preisvergleichKunden";
+
 
 export default class kunden extends Component {
 
@@ -18,6 +19,7 @@ export default class kunden extends Component {
         this.state = {
             behaelter: "",
             plz: "",
+            navigate:false,
         };
     }
 
@@ -35,7 +37,7 @@ export default class kunden extends Component {
     submitHandler = e => {
         e.preventDefault()
         console.log(this.state)
-        axios.post('https://jsonplaceholder.typicode.com/posts', this.state)
+        axios.post('http://localhost:8080/preis/anfrage', this.state)
             .then(response => {
                 console.log(response)
                 })
@@ -44,6 +46,9 @@ export default class kunden extends Component {
             })
     }
 
+    navigieren = e =>{
+        this.setState({navigate:true})
+    }
 
     render() {
         const {behaelter, plz} = this.state
@@ -60,7 +65,6 @@ export default class kunden extends Component {
                 </Row>
 
                 <div className="selected-behltergrsse" >
-                    <HashRouter>
                     <form onSubmit={this.submitHandler}>
                         <div onChange={this.setBehaelter.bind(this)}>
                     <Row>
@@ -68,21 +72,21 @@ export default class kunden extends Component {
                         <Col/>
                         <Col>
                             <label>
-                                <input type="radio" name="behaelter" value="1.2 Tonnen" id="1.2t" />
+                                <input type="radio" name="behaelter" value="preis2700liter" id="1.2t" />
                                 <Image src={gastank} height="120" width="120"/>
                                 <br/><h6 className="text-center">1,2 Tonnen</h6>
                             </label>
                         </Col>
                         <Col>
                             <label>
-                                <input type="radio" name="behaelter" value="2.1 Tonnen" id="2.1t" />
+                                <input type="radio" name="behaelter" value="preis4850liter" id="2.1t" />
                                 <Image src={gastank} height="120" width="120"/>
                                 <br/><h6 className="text-center">2,1 Tonnen</h6>
                             </label>
                         </Col>
                         <Col>
                             <label>
-                                <input type="radio" name="behaelter" value="2.9 Tonnen" id="2.9t" />
+                                <input type="radio" name="behaelter" value="preis6400liter" id="2.9t" />
                                 <Image src={gastank} height="120" width="120"/>
                                 <br/><h6 className="text-center">2,9 Tonnen</h6>
                             </label>
@@ -120,17 +124,18 @@ export default class kunden extends Component {
                         <Col>
                             <br/>
                             <div className="text-center">
-                                <Button type="submit" className="btn btn-primary" >
-                                    <NavLink to="/preisvergleichKunden" style={{ color: 'white' }} text-decoration= "none">
-                                        Anbieter finden</NavLink></Button>
+                                <Button type="submit" className="btn btn-primary" onClick={this.navigieren}>
+                                    Anbieter finden
+                                    {this.state.navigate? <Link to="/preisvergleichKunden"/> : null}
+                                </Button>
                             </div>
+                            <Route path={"/preisvergleichKunden"} component={preisvergleichKunden}/>
+
                         </Col>
                         <Col/>
                     </Row>
                     <Row><br/></Row>
-                        <Route path={"/preisvergleichKunden"} component={preisvergleichKunden}/>
                     </form>
-                    </HashRouter>
                 </div>
 
             </div>
