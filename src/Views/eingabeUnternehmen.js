@@ -26,7 +26,7 @@ export default class eingabeUnternehmen extends Component {
     mySubmitHandler = (event) => {
         event.preventDefault();
         console.log(this.state)
-        axios.post('http://localhost:8080/preis/anfrage', this.state)
+        axios.post('http://localhost:8080//kontaktUnternehmene', this.state)
             .then(response => {
                 console.log(response)
             })
