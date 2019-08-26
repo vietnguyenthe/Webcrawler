@@ -7,21 +7,6 @@ import eingabeUnternehmen from "./eingabeUnternehmen";
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export default class unternehmen extends Component {
     render() {
         return (
