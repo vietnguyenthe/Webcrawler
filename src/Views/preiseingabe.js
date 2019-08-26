@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Footer from "./footer";
+import axios from "axios";
 
 
 export default class Preiseingabe extends Component{
@@ -11,10 +12,23 @@ export default class Preiseingabe extends Component{
             preis6400Liter: '',
             postleitzahl: '',
         };
+
+        this.mySubmitHandler = this.mySubmitHandler.bind(this)
+        this.myChangeHandler = this.myChangeHandler.bind(this)
     }
 
     mySubmitHandler = (event) => {
         event.preventDefault();
+        console.log(this.state)
+        axios.post('http://localhost:8080/preis/anfrage', this.state)
+            .then(response => {
+                console.log(response)
+            })
+
+            .catch(error => {
+                console.log(error)
+            })
+
     }
 
     myChangeHandler = (event) => {
@@ -32,26 +46,26 @@ export default class Preiseingabe extends Component{
                 <form >
                         <div className="form-group col-lg-6 col-sm-12">
                             <label for="text">Preis für 2700 Liter</label>
-                            <input type="number" class="form-control" id="preis2700Liter" onChange={this.myChangeHandler}/>
+                            <input type="number" value={this.props.preis2700Liter} class="form-control" name="preis2700Liter" onChange={this.myChangeHandler}/>
                         </div>
                         <div className="form-group col-lg-6 col-sm-12">
                             <label for="text">Preis für 4800 Liter</label>
-                            <input type="number" className="form-control" id="preis2700Liter" onChange={this.myChangeHandler}/>
+                            <input type="number" value={this.props.preis4850Liter}  className="form-control" name="preis4850Liter" onChange={this.myChangeHandler}/>
                     </div>
                     <div class="form-group col-lg-6 col-sm-12">
                         <label for="text">Preis für 6400 Liter</label>
-                        <input type="number" className="form-control" id="preis4850Liter" onChange={this.myChangeHandler}/>
+                        <input type="number" value={this.props.preis6400Liter}  className="form-control" name="preis6400Liter" onChange={this.myChangeHandler}/>
                     </div>
                     <div className="form-group col-lg-6 col-sm-12">
                         <label for="text">Postleitzahl</label>
-                        <input type="number" className="form-control" id="preis6400Liter" onChange={this.myChangeHandler}/>
+                        <input type="number" value={this.props.postleitzahl}  className="form-control" name="postleitzahl" onChange={this.myChangeHandler}/>
                     </div>
                     <div className="form-group col-lg-6 col-sm-12">
                     <button type="submit" class="btn btn-primary" onClick={this.mySubmitHandler}>Daten aktualisieren</button>
                     </div>
                 </form>
              </div>
-                <Footer/>
+            <Footer/>
             </div>
         );
     }
