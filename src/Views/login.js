@@ -19,9 +19,14 @@ export default class Login extends Component {
     mySubmitHandler = (event) => {
         event.preventDefault();
         console.log(this.state)
-        axios.post('http://localhost:8080/preis/anfrage', this.state)
+        axios.post('http://localhost:8080/login', this.state)
             .then(response => {
                 console.log(response)
+                if(response.data=="erfolgreich"){
+                    this.props.history.push("/preiseingabe")
+                }
+
+
             })
             .catch(error => {
                 console.log(error)
