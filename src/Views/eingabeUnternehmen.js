@@ -26,7 +26,7 @@ export default class eingabeUnternehmen extends Component {
     mySubmitHandler = (event) => {
         event.preventDefault();
         console.log(this.state)
-        axios.post('http://localhost:8080//kontaktUnternehmene', this.state)
+        axios.post('http://localhost:8080/kontaktUnternehmen', this.state)
             .then(response => {
                 console.log(response)
             })
@@ -49,7 +49,7 @@ export default class eingabeUnternehmen extends Component {
                     <h5 className="text-center"> Kontaktformular</h5>
                     <h6 className="text-center  ">Sie möchten mit uns zusammenarbeiten? Dann schreiben Sie </h6>
                     <h6 className="text-center  ">uns eine Nachricht</h6>
-                    <form>
+                    <form method="POST">
                         <div>
                             <div className="form-group  col-lg-6 col-sm-12">
                                 <label for="text">Firmenname</label>
@@ -90,7 +90,7 @@ export default class eingabeUnternehmen extends Component {
                         </div>
                         <div className="form-group col-lg-6 col-sm-12">
                             <label for="pwd">Nachricht</label>
-                            <textarea className="form-control" name="textNachricht" value={this.props.nachricht}
+                            <textarea className="form-control" name="nachricht" value={this.props.nachricht}
                                    onChange={this.myChangeHandler} rows="6"></textarea>
                         </div>
                         <div className="form-group col-lg-6 col-sm-12">
