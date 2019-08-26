@@ -12,6 +12,7 @@ import unternehmen from "./Views/unternehmen";
 import ueberUns from "./Views/ueberUns";
 import preisvergleichKunden from "./Views/preisvergleichKunden";
 import eingabeUnternehmen from "./Views/eingabeUnternehmen";
+import preiseingabe from "./Views/preiseingabe";
 
 export default class App extends Component {
     render() {
@@ -46,6 +47,7 @@ export default class App extends Component {
                             <Route path={"/unternehmen"} component={unternehmen}/>
                             <Route path={"/preisvergleichKunden"} component={preisvergleichKunden}/>
                             <Route path={"/eingabeUnternehmen"} component={eingabeUnternehmen}/>
+                            <Route path={"/preiseingabe"} component={preiseingabe}/>
                         </div>
                 </div>
             </HashRouter>
