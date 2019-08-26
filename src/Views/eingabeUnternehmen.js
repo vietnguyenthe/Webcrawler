@@ -9,14 +9,14 @@ export default class eingabeUnternehmen extends Component {
     constructor(props){
         super(props)
         this.state = {
-            firmenName: '',
-            firmenAdresse: '',
-            firmenPlz: '',
-            firmenOrt: '',
-            kontaktPerson:'',
+            firmennamen: '',
+            firmenadresse: '',
+            plz: '',
+            ort: '',
+            kontaktperson:'',
             betreff:'',
-            email:'',
-            textNachricht:''
+            emailAdresse:'',
+            nachricht:''
         };
 
         this.mySubmitHandler = this.mySubmitHandler.bind(this)
@@ -41,7 +41,7 @@ export default class eingabeUnternehmen extends Component {
         this.setState({[event.target.name] : event.target.value})
     }
     render() {
-        const {firmenName, firmenAdresse, firmenPlz,firmenOrt, kontaktPerson, email, betreff, textNachricht} = this.state
+        const {firmennamen, firmenadresse, plz,ort, kontaktperson, emailAdresse, betreff, nachricht} = this.state
         return (
 
             <div>
@@ -53,28 +53,28 @@ export default class eingabeUnternehmen extends Component {
                         <div>
                             <div className="form-group  col-lg-6 col-sm-12">
                                 <label for="text">Firmenname</label>
-                                <input type="text" className="form-control" name="firmenName" value={this.props.firmenName}
+                                <input type="text" className="form-control" name="firmennamen" value={this.props.firmennamen}
                                        onChange={this.myChangeHandler}/>
                         </div>
                             <div className="form-group col-lg-6 col-sm-12 ">
                                 <label htmlFor="text">Adresse</label>
-                                <input type="text" className="form-control" name="firmenAdresse" value={this.props.firmenAdresse}
+                                <input type="text" className="form-control" name="firmenadresse" value={this.props.firmenadresse}
                                        onChange={this.myChangeHandler}/>
                             </div>
                         </div>
                         <div className="form-group col-lg-6 col-sm-12">
                             <label for="email">PLZ</label>
-                            <input type="text" className="form-control" name="firmenPlz" value={this.props.firmenPlz}
+                            <input type="text" className="form-control" name="plz" value={this.props.plz}
                                    onChange={this.myChangeHandler}/>
                         </div>
                         <div className="form-group col-lg-6 col-sm-12">
                             <label for="email">Ort</label>
-                            <input type="text" className="form-control" name="firmenOrt" value={this.props.firmenOrt}
+                            <input type="text" className="form-control" name="ort" value={this.props.ort}
                                    onChange={this.myChangeHandler}/>
                         </div>
                         <div className="form-group col-lg-6 col-sm-12">
                             <label for="email">Kontaktperson</label>
-                            <input type="text" className="form-control" name="kontaktPerson" value={this.props.kontaktPerson}
+                            <input type="text" className="form-control" name="kontaktperson" value={this.props.kontaktperson}
                                    onChange={this.myChangeHandler}/>
                         </div>
                         <div className="form-group col-lg-6 col-sm-12">
@@ -85,12 +85,12 @@ export default class eingabeUnternehmen extends Component {
 
                         <div className="form-group col-lg-6 col-sm-12">
                             <label for="email">Email</label>
-                            <input type="text" className="form-control" name="email" value={this.props.email}
+                            <input type="text" className="form-control" name="emailAdresse" value={this.props.email}
                                    onChange={this.myChangeHandler}/>
                         </div>
                         <div className="form-group col-lg-6 col-sm-12">
                             <label for="pwd">Nachricht</label>
-                            <textarea className="form-control" name="textNachricht" value={this.props.textNachricht}
+                            <textarea className="form-control" name="textNachricht" value={this.props.nachricht}
                                    onChange={this.myChangeHandler} rows="6"></textarea>
                         </div>
                         <div className="form-group col-lg-6 col-sm-12">
