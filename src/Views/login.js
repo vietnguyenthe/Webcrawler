@@ -23,7 +23,8 @@ export default class Login extends Component {
             .then(response => {
                 console.log(response)
                 if(response.data=="erfolgreich"){
-                    this.props.history.push("/preiseingabe")
+                    this.props.history.push(
+                        "/preiseingabe",)
                 }
 
 

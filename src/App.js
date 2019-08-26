@@ -14,6 +14,7 @@ import preisvergleichKunden from "./Views/preisvergleichKunden";
 import eingabeUnternehmen from "./Views/eingabeUnternehmen";
 import preiseingabe from "./Views/preiseingabe";
 import login from "./Views/login"
+import { Link } from 'react-router-dom'
 
 
 export default class App extends Component {
@@ -51,9 +52,24 @@ export default class App extends Component {
                             <Route path={"/eingabeUnternehmen"} component={eingabeUnternehmen}/>
                             <Route path={"/preiseingabe"} component={preiseingabe}/>
                             <Route path={"/login"} component={login}/>
+
+                            <Link
+                                to={{
+                                    pathname: "/preiseingabe",
+                                    state: {
+                                        detail:"hallo"
+                                    }
+                                }}
+                            />
+
+
+
                         </div>
                 </div>
             </HashRouter>
+
+
+
         )
     }
     }

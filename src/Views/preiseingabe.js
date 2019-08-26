@@ -7,14 +7,20 @@ export default class Preiseingabe extends Component{
     constructor(props){
         super(props)
         this.state = {
-            preis2700Liter: '',
+            preis2700Liter: this.props.detail,
             preis4850Liter: '',
             preis6400Liter: '',
             postleitzahl: '',
         };
 
+
         this.mySubmitHandler = this.mySubmitHandler.bind(this)
         this.myChangeHandler = this.myChangeHandler.bind(this)
+
+    }
+
+    componentDidMount() {
+        const {variable} = this.probs.location.state
     }
 
     mySubmitHandler = (event) => {
@@ -34,6 +40,7 @@ export default class Preiseingabe extends Component{
     myChangeHandler = (event) => {
         this.setState({[event.target.name] : event.target.value})
     }
+
 
     render() {
         const {preis2700Liter, preis4850Liter, preis6400Liter, postleitzahl,} = this.state
