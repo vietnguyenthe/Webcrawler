@@ -65,7 +65,7 @@ export default class preisvergleichKunden extends Component {
 
         return (
             <div>
-                <article className="preisvergleich">
+                <article className="preisvergleich" >
                     <h1>Preisvergleich der Anbieter</h1>
                     {anbieterDaten}
                 </article>

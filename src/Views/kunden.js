@@ -12,10 +12,12 @@ export default class kunden extends Component {
 
     constructor(props) {
         super(props);
+        console.log('props', props)
 
         this.state = {
             behaelter: "",
             plz: "",
+            anbieter:[],
         };
     }
 
@@ -38,9 +40,6 @@ export default class kunden extends Component {
                 console.log(response)
                 })
 
-            .then(response => {
-
-            })
             .catch(error => {
                 console.log(error)
             })
@@ -49,11 +48,55 @@ export default class kunden extends Component {
         // return <Redirect to={"/preisvergleichKunden"}/>
     }
 
+    ladeAnbieter = () => {
+        // let anbieterAusDB = []
+        axios.post("http://localhost:8080/preis/anfrage", this.state)
+            .then(response => {
+                console.log(response)
+                this.setState({anbieter: response.data})
+            })
+            /*         .then(payload => {
+                         payload.map(firma => {
+                             let unternehmen = {
+                                 name: payload.liste.name,
+                                 adresse: payload.liste.adresse,
+                                 plz: payload.liste.plz,
+                             }
+                             anbieterAusDB.push(unternehmen)
+                             return unternehmen //nicht nötig, verhindern aber Ausgabe einer Warning
+                         })
+                         this.setState({anbieter: anbieterAusDB})
+                     })*/
+            .catch(console.log)
+    }
 
     render() {
         const {behaelter, plz} = this.state
+
+        const {anbieter} = this.state
+
+        let anbieterDaten = []
+        let i = 0  //nicht nötig, verhindern aber Ausgabe einer Warning
+        for (let unternehmen of this.state.anbieter) {
+            anbieterDaten.push(
+                <article className="anbieterDaten">
+                    <h3>{unternehmen.name}</h3>
+                    <h5>Preis: {unternehmen.preis} </h5>
+                    <h5>Adresse:{unternehmen.adresse}  PLZ:{unternehmen.plz}  Ort:{unternehmen.ort}</h5>
+                </article>
+            )
+        }
+
         return (
             <div>
+
+                <div>
+                    <article className="preisvergleich" >
+                        <h1>Preisvergleich der Anbieter</h1>
+                        {anbieterDaten}
+                    </article>
+                </div>
+
                 <Row>
                     <Col><h3 className="text-center">Wählen Sie die Optionen für den Preisvergleich aus:
                     </h3></Col>
@@ -125,7 +168,7 @@ export default class kunden extends Component {
                             <br/>
                             <div className="text-center">
                                     <Button type="submit" className="btn btn-primary"
-                                            onclick="{/preisvergleichKunden}" > Anbieter finden</Button>
+                                            onClick={this.ladeAnbieter}> Anbieter finden</Button>
                             </div>
                         </Col>
                         <Col/>
@@ -133,8 +176,6 @@ export default class kunden extends Component {
                     <Row><br/></Row>
                     </form>
                 </div>
-
-
             </div>
         )
     }
