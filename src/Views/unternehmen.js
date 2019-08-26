@@ -3,6 +3,25 @@ import "../styles/unternehmen.css"
 import {Route, HashRouter, Link} from "react-router-dom";
 import eingabeUnternehmen from "./eingabeUnternehmen";
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default class unternehmen extends Component {
     render() {
         return (

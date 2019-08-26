@@ -13,6 +13,8 @@ import ueberUns from "./Views/ueberUns";
 import preisvergleichKunden from "./Views/preisvergleichKunden";
 import eingabeUnternehmen from "./Views/eingabeUnternehmen";
 import preiseingabe from "./Views/preiseingabe";
+import login from "./Views/login"
+
 
 export default class App extends Component {
     render() {
@@ -25,7 +27,7 @@ export default class App extends Component {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="mr-auto">
                                 <Nav.Link><NavLink to="/kunden">Für Kunden</NavLink></Nav.Link>
-                                <Nav.Link><NavLink to="/unternehmen">Für Unternehmen</NavLink></Nav.Link>
+                                <Nav.Link><NavLink to="/login">Für Unternehmen</NavLink></Nav.Link>
                                 <Nav.Link><NavLink to="/ueberUns">Über uns</NavLink></Nav.Link>
                             </Nav>
                             <Form inline>
@@ -48,9 +50,10 @@ export default class App extends Component {
                             <Route path={"/preisvergleichKunden"} component={preisvergleichKunden}/>
                             <Route path={"/eingabeUnternehmen"} component={eingabeUnternehmen}/>
                             <Route path={"/preiseingabe"} component={preiseingabe}/>
+                            <Route path={"/login"} component={login}/>
                         </div>
                 </div>
             </HashRouter>
-    )
+        )
     }
     }
