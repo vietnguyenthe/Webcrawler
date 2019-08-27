@@ -13,6 +13,7 @@ export default class preisvergleichKunden extends Component {
         }
     }
 
+
     ladeAnbieter = () => {
         // let anbieterAusDB = []
         axios.post("http://localhost:8080/preis/anfrage", this.state)
@@ -34,6 +35,8 @@ export default class preisvergleichKunden extends Component {
             })*/
             .catch(console.log)
     }
+
+
 
 
     componentDidMount() {
