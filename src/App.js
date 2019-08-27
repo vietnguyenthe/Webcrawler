@@ -14,9 +14,8 @@ import preisvergleichKunden from "./Views/preisvergleichKunden";
 import eingabeUnternehmen from "./Views/eingabeUnternehmen";
 import preiseingabe from "./Views/preiseingabe";
 import StickyFooter from 'react-sticky-footer';
-import kazim from "./pictures/kazim-foto.jpg";
-import Image from "react-bootstrap/Image";
-import gasbus from "./gasbus.jpg"
+
+
 
 export default class App extends Component {
     render() {
