@@ -14,7 +14,7 @@ import preisvergleichKunden from "./Views/preisvergleichKunden";
 import eingabeUnternehmen from "./Views/eingabeUnternehmen";
 import preiseingabe from "./Views/preiseingabe";
 import StickyFooter from 'react-sticky-footer';
-
+import login from "./Views/login"
 
 
 export default class App extends Component {
@@ -48,7 +48,7 @@ export default class App extends Component {
                             <Route exact path={"/"} component={kunden}/>
                             <Route path={"/kunden"} component={kunden}/>
                             <Route path={"/ueberUns"} component={ueberUns}/>
-                            <Route path={"/unternehmen"} component={unternehmen}/>
+                            <Route path={"/unternehmen"} component={login}/>
                             <Route path={"/preisvergleichKunden"} component={preisvergleichKunden}/>
                             <Route path={"/eingabeUnternehmen"} component={eingabeUnternehmen}/>
                             <Route path={"/preiseingabe"} component={preiseingabe}/>
