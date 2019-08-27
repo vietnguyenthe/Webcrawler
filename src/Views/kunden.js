@@ -3,7 +3,7 @@ import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import gastank from "../pictures/gastank.png";
-import "../styles/kunden.css";
+import "../styles/App.css";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import axios from 'axios';
@@ -167,7 +167,7 @@ export default class kunden extends Component {
                         <Col>
                             <br/>
                             <div className="text-center">
-                                    <Button type="submit" className="btn btn-primary"
+                                    <Button type="submit" className="btn btn-primary anbieter_btn"
                                             onClick={this.ladeAnbieter}> Anbieter finden</Button>
                             </div>
                         </Col>

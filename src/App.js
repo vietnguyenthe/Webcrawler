@@ -27,10 +27,10 @@ export default class App extends Component {
                         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="mr-auto">
-                                <Nav.Link><NavLink to="/kunden">Für Kunden</NavLink></Nav.Link>
-                                <Nav.Link><NavLink to="/unternehmen">Für Unternehmen</NavLink></Nav.Link>
-                                <Nav.Link><NavLink to="/ueberUns">Über uns</NavLink></Nav.Link>
-                                <Nav.Link><NavLink to="/eingabeUnternehmen">Kontakt</NavLink></Nav.Link>
+                                <Nav.Link><NavLink className="navlinkcolor" to="/kunden">Für Kunden</NavLink></Nav.Link>
+                                <Nav.Link><NavLink className="navlinkcolor" to="/unternehmen">Für Unternehmen</NavLink></Nav.Link>
+                                <Nav.Link><NavLink className="navlinkcolor" to="/ueberUns">Über uns</NavLink></Nav.Link>
+                                <Nav.Link><NavLink className="navlinkcolor" to="/eingabeUnternehmen">Kontakt</NavLink></Nav.Link>
                             </Nav>
                             <Form inline>
                                 <FormControl type="text" placeholder="Search" className="mr-sm-2"/>
