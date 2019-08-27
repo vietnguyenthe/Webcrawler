@@ -126,10 +126,7 @@ export default class kunden extends Component {
                             <br/>
                             <div className="text-center">
                                 <Link to={{pathname: "/preisvergleichKunden",
-                                    state:{
-                                    behaelter: behaelter,
-                                        plz: plz,
-                                    }}}>
+                                    }}>
                                 <Button type="submit" className="btn btn-primary"> Anbieter finden</Button>
                                 </Link>
                             </div>
