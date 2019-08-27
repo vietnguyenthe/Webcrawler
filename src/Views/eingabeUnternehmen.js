@@ -1,8 +1,5 @@
 import React, {Component} from "react"
 
-
-
-
 export default class eingabeUnternehmen extends Component {
     constructor(props){
         super(props)
