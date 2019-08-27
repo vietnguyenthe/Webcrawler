@@ -72,7 +72,6 @@ export default class Preiseingabe extends Component{
                     </div>
                 </form>
              </div>
-            <Footer/>
             </div>
         );
     }

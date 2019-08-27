@@ -100,7 +100,6 @@ export default class eingabeUnternehmen extends Component {
                         </div>
                     </form>
                 </div>
-                <Footer/>
             </div>
 
         );
