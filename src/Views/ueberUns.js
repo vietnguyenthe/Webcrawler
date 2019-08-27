@@ -73,7 +73,6 @@ export default class ueberUns extends Component {
                             tincidunt ut laoreet dolore magna aliquam erat volutpat.
                         </p>
                     </Col>
-                    <Col sm={1}/>
                     <Col sm={2}>
                         <Image style={{width: 150, height: 150}} className="rounded mx-auto d-block"
                                src={kazim}/>
@@ -83,8 +82,8 @@ export default class ueberUns extends Component {
                         <br/>
                         <Image style={{width: 150, height: 150}} className="rounded mx-auto d-block"
                                src={viet}/>
-
                     </Col>
+                    <Col sm={1}/>
                 </Row>
             </div>
         )

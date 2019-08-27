@@ -14,6 +14,9 @@ import preisvergleichKunden from "./Views/preisvergleichKunden";
 import eingabeUnternehmen from "./Views/eingabeUnternehmen";
 import preiseingabe from "./Views/preiseingabe";
 import StickyFooter from 'react-sticky-footer';
+import kazim from "./pictures/kazim-foto.jpg";
+import Image from "react-bootstrap/Image";
+import gasbus from "./gasbus.jpg"
 
 export default class App extends Component {
     render() {
@@ -38,7 +41,7 @@ export default class App extends Component {
                     </Navbar>
 
                     <Jumbotron fluid>
-                        <h1 className="header">Welcome To React-Bootstrap</h1>
+                        <h1 className="header">Willkommen bei fluessiggas-vergleich.de</h1>
                     </Jumbotron>
 
 
