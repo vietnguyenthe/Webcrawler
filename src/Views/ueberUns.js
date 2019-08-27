@@ -2,9 +2,9 @@ import React, {Component} from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
-import kazim from "./kazim-foto.jpg"
-import felix from "./felix-foto.jpg"
-import viet from "./viet-foto.jpg"
+import kazim from "../pictures/kazim-foto.jpg"
+import felix from "../pictures/felix-foto.jpg"
+import viet from "../pictures/viet-foto.jpg"
 
 export default class ueberUns extends Component {
     render() {
