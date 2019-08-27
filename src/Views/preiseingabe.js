@@ -11,6 +11,7 @@ export default class Preiseingabe extends Component{
             preis4850Liter: '',
             preis6400Liter: '',
             postleitzahl: '',
+            kennwort:'',
         };
 
         this.mySubmitHandler = this.mySubmitHandler.bind(this)
@@ -20,7 +21,7 @@ export default class Preiseingabe extends Component{
     mySubmitHandler = (event) => {
         event.preventDefault();
         console.log(this.state)
-        axios.post('http://localhost:8080/preis/anfrage', this.state)
+        axios.post('http://localhost:8080/preiseingabe', this.state)
             .then(response => {
                 console.log(response)
             })
@@ -36,7 +37,7 @@ export default class Preiseingabe extends Component{
     }
 
     render() {
-        const {preis2700Liter, preis4850Liter, preis6400Liter, postleitzahl,} = this.state
+        const {preis2700Liter, preis4850Liter, preis6400Liter, postleitzahl,kennwort} = this.state
         return (
             <div>
                 <div className="container mt-3 mb-3">
@@ -58,14 +59,19 @@ export default class Preiseingabe extends Component{
                     </div>
                     <div className="form-group col-lg-6 col-sm-12">
                         <label for="text">Postleitzahl</label>
-                        <input type="number" value={this.props.postleitzahl}  className="form-control" name="postleitzahl" onChange={this.myChangeHandler}/>
+                        <input type="number" value={this.props.postleitzahl}  className="form-control"
+                               name="postleitzahl" onChange={this.myChangeHandler}/>
+                    </div>
+                    <div className="form-group col-lg-6 col-sm-12">
+                        <label for="text">Kennwort</label>
+                        <input type="password" value={this.props.kennwort} className="form-control"
+                               name="kennwort" onChange={this.myChangeHandler}/>
                     </div>
                     <div className="form-group col-lg-6 col-sm-12">
                     <button type="submit" class="btn btn-primary" onClick={this.mySubmitHandler}>Daten aktualisieren</button>
                     </div>
                 </form>
              </div>
-            <Footer/>
             </div>
         );
     }
