@@ -26,7 +26,6 @@ export default class unternehmen extends Component {
                                              <span className="input-group-text"><i className="fas fa-user"></i></span>
                                          </div>
                                          <input type="text" className="form-control" placeholder="Benutzername"/>
-
                                      </div>
                                      <div className="input-group form-group">
                                          <div className="input-group-prepend">
@@ -50,6 +49,7 @@ export default class unternehmen extends Component {
                                  <div className="d-flex justify-content-center">
                                      <a href="#">Passwort vergessen?</a>
                                  </div>
+
                              </div>
                          </div>
                      </div>
