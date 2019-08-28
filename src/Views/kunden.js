@@ -52,6 +52,9 @@ export default class kunden extends Component {
         axios.post('http://localhost:8080/preis/anfrage', this.state)
             .then(response => {
                 console.log(response)
+                if(response.data=="") {
+                    alert("Keine Preise für die Postleitzahl vorhanden")
+                    }
                 })
 
             .catch(error => {
@@ -166,7 +169,7 @@ export default class kunden extends Component {
                                 <InputGroup.Prepend>
                                     <InputGroup.Text id="basic-addon1">PLZ</InputGroup.Text>
                                 </InputGroup.Prepend>
-                                    <input type="text" aria-describedby="basic-addon1" name="plz"
+                                    <input type="number" aria-describedby="basic-addon1" min="10000" max="99999" name="plz"
                                            onChange={this.handleChange} value={plz} className="form-control"/>
                             </InputGroup>
                         </Col>

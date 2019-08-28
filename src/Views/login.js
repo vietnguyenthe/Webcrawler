@@ -25,10 +25,10 @@ export default class Login extends Component {
                 if(response.data=="erfolgreich"){
                     this.props.history.push({
                         pathname: '/preiseingabe',
-                    })
+                    })}
+                if(response.data=="fehlgeschlagen"){
+                    alert("login fehlgeschlagen")
                 }
-
-
             })
             .catch(error => {
                 console.log(error)
@@ -45,7 +45,7 @@ export default class Login extends Component {
         return (
             <div>
                 <div className="container d-flex text-center offset-4">
-                    <form className="text-center" method="post" id="einlogen">
+                    <form className="text-center" id="einlogen">
                         <h3> Bitte Anmelden</h3>
                         <input type="text" className="form-control mt-1" name="loginName" placeholder="Benutzername" value={this.props.loginName} onChange={this.myChangeHandler}/>
                         <input type="text" className="form-control mt-1" name="loginPasswort" placeholder="passwort" value={this.props.loginPasswort} onChange={this.myChangeHandler}/>
