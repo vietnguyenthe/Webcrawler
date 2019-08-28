@@ -19,16 +19,15 @@ export default class Preiseingabe extends Component{
     }
 
     mySubmitHandler = (event) => {
-
+        //event.preventDefault();
         console.log(this.state)
         axios.post('http://localhost:8080/preiseingabe', this.state)
             .then(response => {
                 console.log(response)
-                if(response.data=="fehlgeschlagen"){
-                    alert("preiseingabe fehlgeschlagen überprüen Sie die Eingabe")
-                }
                 if(response.data=="erfolgreich"){
-                    alert("Preise in die Datenbank geschrieben")
+                    alert("Daten wurden erfolgreich in die Datenbank übertragen.")
+                } else if(response.data == "fehlgeschlagen"){
+                    alert("Fehlgeschlagen! Daten wurden leider NICHT übertragen.")
                 }
             })
 
@@ -66,13 +65,14 @@ export default class Preiseingabe extends Component{
                     <div className="form-group col-lg-6 col-sm-12">
                         <label for="text">Postleitzahl</label>
                         <input type="number" value={this.props.postleitzahl}  className="form-control"
-                               name="postleitzahl" maxlength="5" onChange={this.myChangeHandler}/>
+                               name="postleitzahl" onChange={this.myChangeHandler}/>
                     </div>
                     {/*<div className="form-group col-lg-6 col-sm-12">
                         <label for="text">Kennwort</label>
                         <input type="password" value={this.props.kennwort} className="form-control"
                                name="kennwort" onChange={this.myChangeHandler}/>
-                    </div> */}
+                    </div>
+                    */}
                     <div className="form-group col-lg-6 col-sm-12">
                     <button type="submit" class="btn btn-primary" onClick={this.mySubmitHandler}>Daten aktualisieren</button>
                     </div>

@@ -53,10 +53,10 @@ export default class kunden extends Component {
         axios.post('http://localhost:8080/preis/anfrage', this.state)
             .then(response => {
                 console.log(response)
-                if(response.data=="") {
-                    alert("Keine Preise für die Postleitzahl vorhanden")
-                    }
-                })
+                if(response.data == ""){
+                    alert("Keine Preise für diese Postleitzahl vorhanden")
+                }
+            })
 
             .catch(error => {
                 console.log(error)

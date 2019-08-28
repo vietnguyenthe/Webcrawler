@@ -29,6 +29,9 @@ export default class eingabeUnternehmen extends Component {
         axios.post('http://localhost:8080/kontaktUnternehmen', this.state)
             .then(response => {
                 console.log(response)
+                if(response.data=="erfolgreich"){
+                    alert("Ihre Nachricht wurde erfolgreich übermittelt. Wir werden uns zeitnah bei Ihnen melden!")
+                }
             })
 
             .catch(error => {
