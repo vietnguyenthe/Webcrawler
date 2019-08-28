@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import divWithClassName from "react-bootstrap/es/utils/divWithClassName";
 import axios from "axios";
 import Footer from "./footer";
+import {Redirect} from 'react'
 
 export default class Login extends Component {
 
@@ -26,7 +27,7 @@ export default class Login extends Component {
                     this.props.history.push({
                         pathname: '/preiseingabe',
                     })}
-                if(response.data=="fehlgeschlagen"){
+                if(response.data=="fehlgeschlagen") {
                     alert("login fehlgeschlagen")
                 }
             })
