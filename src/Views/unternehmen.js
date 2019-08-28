@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "../styles/unternehmen.css"
+import "../styles/App.css"
 import {Route, HashRouter, Link} from "react-router-dom";
 import eingabeUnternehmen from "./eingabeUnternehmen";
 
