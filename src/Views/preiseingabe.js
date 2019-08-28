@@ -24,6 +24,11 @@ export default class Preiseingabe extends Component{
         axios.post('http://localhost:8080/preiseingabe', this.state)
             .then(response => {
                 console.log(response)
+                if(response.data=="erfolgreich"){
+                    alert("Daten wurden erfolgreich in die Datenbank übertragen.")
+                } else if(response.data == "fehlgeschlagen"){
+                    alert("Fehlgeschlagen! Daten wurden leider NICHT übertragen.")
+                }
             })
 
             .catch(error => {
@@ -44,7 +49,7 @@ export default class Preiseingabe extends Component{
                     <h5 className="text-center"> Preiseingabe</h5>
                     <h6 className="text-center  ">Trage die Preise für die jeweilige PLZ ein</h6>
 
-                <form method="post">
+                <form>
                         <div className="form-group col-lg-6 col-sm-12">
                             <label for="text">Preis (ct/l) für 2700 Liter</label>
                             <input type="number" value={this.props.preis2700Liter} class="form-control" name="preis2700Liter" onChange={this.myChangeHandler}/>
@@ -62,11 +67,12 @@ export default class Preiseingabe extends Component{
                         <input type="number" value={this.props.postleitzahl}  className="form-control"
                                name="postleitzahl" onChange={this.myChangeHandler}/>
                     </div>
-                    <div className="form-group col-lg-6 col-sm-12">
+                    {/*<div className="form-group col-lg-6 col-sm-12">
                         <label for="text">Kennwort</label>
                         <input type="password" value={this.props.kennwort} className="form-control"
                                name="kennwort" onChange={this.myChangeHandler}/>
                     </div>
+                    */}
                     <div className="form-group col-lg-6 col-sm-12">
                     <button type="submit" class="btn btn-primary" onClick={this.mySubmitHandler}>Daten aktualisieren</button>
                     </div>

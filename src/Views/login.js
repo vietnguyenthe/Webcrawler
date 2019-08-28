@@ -7,7 +7,7 @@ import eingabeUnternehmen from "./eingabeUnternehmen";
 
 export default class Login extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             loginName: '',
@@ -24,14 +24,16 @@ export default class Login extends Component {
         axios.post('http://localhost:8080/login', this.state)
             .then(response => {
                 console.log(response)
-                if(response.data=="erfolgreich"){
+                if (response.data == "erfolgreich") {
                     this.props.history.push({
                         pathname: '/preiseingabe',
                     })
                 }
+                if(response.data=="fehlgeschlagen"){
+                    alert("Fehlgeschlagen")
+                }
 
-
-            })
+                    })
             .catch(error => {
                 console.log(error)
             })
@@ -39,7 +41,7 @@ export default class Login extends Component {
     }
 
     myChangeHandler = (event) => {
-        this.setState({[event.target.name] : event.target.value})
+        this.setState({[event.target.name]: event.target.value})
     }
 
     render() {
@@ -61,19 +63,22 @@ export default class Login extends Component {
                                         <div className="input-group-prepend">
                                             <span className="input-group-text"><i className="fas fa-user"></i></span>
                                         </div>
-                                        <input type="text" className="form-control" name="loginName" placeholder="Benutzername"
+                                        <input type="text" className="form-control" name="loginName"
+                                               placeholder="Benutzername"
                                                value={this.props.loginName} onChange={this.myChangeHandler}/>
                                     </div>
                                     <div className="input-group form-group">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text"><i className="fas fa-key"></i></span>
                                         </div>
-                                        <input type="text" className="form-control" name="loginPasswort" placeholder="Passwort"
+                                        <input type="text" className="form-control" name="loginPasswort"
+                                               placeholder="Passwort"
                                                value={this.props.loginPasswort} onChange={this.myChangeHandler}/>
                                     </div>
                                     <div className="form-group">
                                         <button target="einlogen" type="submit" className="btn btn-primary mt-2 mr-1"
-                                                placeholder="Name" onClick={this.mySubmitHandler}>Einloggen </button>
+                                                placeholder="Name" onClick={this.mySubmitHandler}>Einloggen
+                                        </button>
                                     </div>
                                 </form>
                             </div>
