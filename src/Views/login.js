@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import divWithClassName from "react-bootstrap/es/utils/divWithClassName";
 import axios from "axios";
 import Footer from "./footer";
-import {Redirect} from 'react'
+import {HashRouter, Link} from "react-router-dom";
+import eingabeUnternehmen from "./eingabeUnternehmen";
 
 export default class Login extends Component {
 
@@ -26,10 +27,10 @@ export default class Login extends Component {
                 if(response.data=="erfolgreich"){
                     this.props.history.push({
                         pathname: '/preiseingabe',
-                    })}
-                if(response.data=="fehlgeschlagen") {
-                    alert("login fehlgeschlagen")
+                    })
                 }
+
+
             })
             .catch(error => {
                 console.log(error)
@@ -44,17 +45,49 @@ export default class Login extends Component {
     render() {
         const {loginName, loginPasswort} = this.state
         return (
-            <div>
-                <div className="container d-flex text-center offset-4">
-                    <form className="text-center" id="einlogen">
-                        <h3> Bitte Anmelden</h3>
-                        <input type="text" className="form-control mt-1" name="loginName" placeholder="Benutzername" value={this.props.loginName} onChange={this.myChangeHandler}/>
-                        <input type="text" className="form-control mt-1" name="loginPasswort" placeholder="passwort" value={this.props.loginPasswort} onChange={this.myChangeHandler}/>
-                        <button target="einlogen" type="submit" className="btn btn-primary mt-2 mr-1" placeholder="Name" onClick={this.mySubmitHandler}>Einloggen </button>
-                    </form>
-                </div>
-            </div>
 
+            <div>
+                <div className="container">
+                    <div className="d-flex justify-content-center">
+                        <div className="card">
+                            <div className="card-header">
+                                <h3>Anmeldung</h3>
+                                <div className="d-flex justify-content-end">
+                                </div>
+                            </div>
+                            <div className="card-body">
+                                <form className="text-center" method="post" id="einlogen">
+                                    <div className="input-group form-group">
+                                        <div className="input-group-prepend">
+                                            <span className="input-group-text"><i className="fas fa-user"></i></span>
+                                        </div>
+                                        <input type="text" className="form-control" name="loginName" placeholder="Benutzername"
+                                               value={this.props.loginName} onChange={this.myChangeHandler}/>
+                                    </div>
+                                    <div className="input-group form-group">
+                                        <div className="input-group-prepend">
+                                            <span className="input-group-text"><i className="fas fa-key"></i></span>
+                                        </div>
+                                        <input type="text" className="form-control" name="loginPasswort" placeholder="Passwort"
+                                               value={this.props.loginPasswort} onChange={this.myChangeHandler}/>
+                                    </div>
+                                    <div className="form-group">
+                                        <button target="einlogen" type="submit" className="btn btn-primary mt-2 mr-1"
+                                                placeholder="Name" onClick={this.mySubmitHandler}>Einloggen </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div className="card-footer">
+                                <div className="d-flex justify-content-center links">
+                                    Sie haben noch keine Anmeldedaten?
+                                    <a><Link to="/eingabeUnternehmen">Anmeldung</Link></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+            </div>
         )
     }
 }

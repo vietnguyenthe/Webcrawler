@@ -3,10 +3,11 @@ import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import gastank from "../pictures/gastank.png";
-import "../styles/kunden.css";
+import "../styles/App.css";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import axios from 'axios';
+import Container from "react-bootstrap/Container";
 
 export default class kunden extends Component {
 
@@ -17,7 +18,7 @@ export default class kunden extends Component {
         this.state = {
             behaelter: "",
             plz: "",
-            anbieter:[],
+            anbieter: [],
             intervalId: 0
         };
     }
@@ -31,7 +32,7 @@ export default class kunden extends Component {
 
     scrollToTop() {
         let intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs);
-        this.setState({ intervalId: intervalId });
+        this.setState({intervalId: intervalId});
     }
 
 
@@ -99,8 +100,8 @@ export default class kunden extends Component {
             anbieterDaten.push(
                 <article className="anbieterDaten">
                     <h3>{unternehmen.name}</h3>
-                    <h5>Preis: {unternehmen.preis} </h5>
-                    <h5>Adresse:{unternehmen.adresse}  PLZ:{unternehmen.plz}  Ort:{unternehmen.ort}</h5>
+                    <h5>Adresse: {unternehmen.adresse}, {unternehmen.plz} {unternehmen.ort}</h5>
+                    <h5 className="borderText">Preis (in ct/l): {unternehmen.preis} </h5>
                 </article>
             )
         }
@@ -109,12 +110,14 @@ export default class kunden extends Component {
             <div>
 
                 <div>
-                    <article className="preisvergleich" >
+                    <article className="preisvergleich">
                         <h1>Preisvergleich der Anbieter</h1>
                         {anbieterDaten}
                     </article>
                 </div>
+                <br/><br/>
 
+                <Container>
                 <Row>
                     <Col><h3 className="text-center">Wählen Sie die Optionen für den Preisvergleich aus:
                     </h3></Col>
@@ -125,78 +128,76 @@ export default class kunden extends Component {
                     <Col/>
                 </Row>
 
-                <div className="selected-behltergrsse" >
+                <div className="selected-behltergrsse">
                     <form onSubmit={this.submitHandler}>
                         <div onChange={this.setBehaelter.bind(this)}>
-                    <Row>
-                        <Col/>
-                        <Col/>
-                        <Col>
-                            <label>
-                                <input type="radio" name="behaelter" value="preis2700liter" id="1.2t" />
-                                <Image src={gastank} height="120" width="120"/>
-                                <br/><h6 className="text-center">1,2 Tonnen</h6>
-                            </label>
-                        </Col>
-                        <Col>
-                            <label>
-                                <input type="radio" name="behaelter" value="preis4850liter" id="2.1t" />
-                                <Image src={gastank} height="120" width="120"/>
-                                <br/><h6 className="text-center">2,1 Tonnen</h6>
-                            </label>
-                        </Col>
-                        <Col>
-                            <label>
-                                <input type="radio" name="behaelter" value="preis6400liter" id="2.9t" />
-                                <Image src={gastank} height="120" width="120"/>
-                                <br/><h6 className="text-center">2,9 Tonnen</h6>
-                            </label>
-                        </Col>
-                        <Col/>
-                        <Col/>
-                    </Row>
+                            <Row>
+                                <Col/>
+                                <Col/>
+                                <Col>
+                                    <label>
+                                        <input type="radio" name="behaelter" value="preis2700liter" id="1.2t"/>
+                                        <Image src={gastank} height="120" width="120"/>
+                                        <br/><h6 className="text-center">1,2 Tonnen</h6>
+                                    </label>
+                                </Col>
+                                <Col>
+                                    <label>
+                                        <input type="radio" name="behaelter" value="preis4850liter" id="2.1t"/>
+                                        <Image src={gastank} height="120" width="120"/>
+                                        <br/><h6 className="text-center">2,1 Tonnen</h6>
+                                    </label>
+                                </Col>
+                                <Col>
+                                    <label>
+                                        <input type="radio" name="behaelter" value="preis6400liter" id="2.9t"/>
+                                        <Image src={gastank} height="120" width="120"/>
+                                        <br/><h6 className="text-center">2,9 Tonnen</h6>
+                                    </label>
+                                </Col>
+                                <Col/>
+                                <Col/>
+                            </Row>
                         </div>
-                    <Row>
-                        <Col/>
-                        <Col><h4 className="text-center"><br/>2. Postleitzahl</h4></Col>
-                        <Col/>
-                    </Row>
-                    <Row>
-                        <Col/>
-                        <Col>
-                            <br/>
-                            <InputGroup className="mb-3">
-                                <InputGroup.Prepend>
-                                    <InputGroup.Text id="basic-addon1">PLZ</InputGroup.Text>
-                                </InputGroup.Prepend>
-                                    <input type="text" aria-describedby="basic-addon1"
-                                           maxlength="5"
-                                           name="plz"
-
+                        <Row>
+                            <Col/>
+                            <Col><h4 className="text-center"><br/>2. Postleitzahl</h4></Col>
+                            <Col/>
+                        </Row>
+                        <Row>
+                            <Col/>
+                            <Col>
+                                <br/>
+                                <InputGroup className="mb-3">
+                                    <InputGroup.Prepend>
+                                        <InputGroup.Text id="basic-addon1">PLZ</InputGroup.Text>
+                                    </InputGroup.Prepend>
+                                    <input type="text" aria-describedby="basic-addon1" name="plz"
                                            onChange={this.handleChange} value={plz} className="form-control"/>
-                            </InputGroup>
-                        </Col>
-                        <Col/>
-                    </Row>
-                    <Row>
-                        <Col/>
-                        <Col><h4 className="text-center"><br/>3. Losschicken</h4></Col>
-                        <Col/>
-                    </Row>
-                    <Row>
-                        <Col/>
-                        <Col>
-                            <br/>
-                            <div className="text-center">
+                                </InputGroup>
+                            </Col>
+                            <Col/>
+                        </Row>
+                        <Row>
+                            <Col/>
+                            <Col><h4 className="text-center"><br/>3. Losschicken</h4></Col>
+                            <Col/>
+                        </Row>
+                        <Row>
+                            <Col/>
+                            <Col>
+                                <br/>
+                                <div className="text-center">
                                     <Button type="submit" className="btn btn-primary"
                                             onClick={this.ladeAnbieter}> Anbieter finden</Button>
-                            </div>
-                        </Col>
-                        <Col/>
-                    </Row>
-                    <Row><br/></Row>
+                                </div>
+                            </Col>
+                            <Col/>
+                        </Row>
+                        <Row><br/></Row>
                     </form>
                 </div>
+                </Container>
             </div>
         )
     }

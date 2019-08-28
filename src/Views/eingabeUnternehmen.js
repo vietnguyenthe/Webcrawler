@@ -1,6 +1,6 @@
 import React, {Component} from "react"
-import Footer from "./footer";
 import axios from "axios";
+
 
 
 
@@ -45,10 +45,13 @@ export default class eingabeUnternehmen extends Component {
         return (
 
             <div>
+
+
                 <div className="container">
                     <h5 className="text-center"> Kontaktformular</h5>
                     <h6 className="text-center  ">Sie möchten mit uns zusammenarbeiten? Dann schreiben Sie </h6>
                     <h6 className="text-center  ">uns eine Nachricht</h6>
+
                     <form method="POST">
                         <div>
                             <div className="form-group  col-lg-6 col-sm-12">
@@ -100,6 +103,7 @@ export default class eingabeUnternehmen extends Component {
                         </div>
                     </form>
                 </div>
+
             </div>
 
         );

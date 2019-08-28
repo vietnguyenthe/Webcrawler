@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import "../styles/preisvergleich.css"
+import "../styles/App.css"
 import axios from "axios";
 
 

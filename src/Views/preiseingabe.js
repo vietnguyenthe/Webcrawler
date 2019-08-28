@@ -52,15 +52,15 @@ export default class Preiseingabe extends Component{
 
                 <form>
                         <div className="form-group col-lg-6 col-sm-12">
-                            <label for="text">Preis für 2700 Liter</label>
+                            <label for="text">Preis (ct/l) für 2700 Liter</label>
                             <input type="number" value={this.props.preis2700Liter} class="form-control" name="preis2700Liter" onChange={this.myChangeHandler}/>
                         </div>
                         <div className="form-group col-lg-6 col-sm-12">
-                            <label for="text">Preis für 4800 Liter</label>
+                            <label for="text">Preis (ct/l) für 4800 Liter</label>
                             <input type="number" value={this.props.preis4850Liter}  className="form-control" name="preis4850Liter" onChange={this.myChangeHandler}/>
                     </div>
                     <div class="form-group col-lg-6 col-sm-12">
-                        <label for="text">Preis für 6400 Liter</label>
+                        <label for="text">Preis (ct/l) für 6400 Liter</label>
                         <input type="number" value={this.props.preis6400Liter}  className="form-control" name="preis6400Liter" onChange={this.myChangeHandler}/>
                     </div>
                     <div className="form-group col-lg-6 col-sm-12">

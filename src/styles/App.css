@@ -6,10 +6,6 @@
     margin: 0 auto;
 }
 
-.NavLink {
-    background-color: black;
-}
-
 .containerBild {
     position: relative;
 }
@@ -26,3 +22,109 @@
     padding: 60px; /* Some padding */
     text-align: center;
 }
+
+/* HIDE RADIO */
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+    cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+    outline: 2px solid dodgerblue;
+}
+
+.preisvergleich {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: .3rem;
+    background-color: lightgrey;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+.borderText{
+    border-style:solid;
+    border-color: dodgerblue;
+    margin-right: 35%;
+    margin-left: 35%;
+}
+
+.preisvergleich > h1,
+.anbieterDaten {
+    margin: .5rem;
+    padding: .3rem;
+    text-align: center;
+}
+
+.anbieterDaten {
+    background: right/contain content-box border-box no-repeat
+    url('') white;
+}
+
+.anbieterDaten > h2,
+.anbieterDaten > p {
+    margin: .2rem;
+    font-size: 1rem;
+}
+
+
+html,body{
+    /*background-image*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+.container{
+    height: 100%;
+    align-content: center;
+}
+
+.card{
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: lightgrey !important;
+}
+
+
+.input-group-prepend span{
+    width: 50px;
+    background-color: dodgerblue;
+    color: white;
+    border:0 !important;
+}
+
+input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+
+}
+
+.login_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.login_btn:hover{
+    color: black;
+    background-color: white;
+}
+
+.links{
+}
+
+.links a{
+    margin-left: 4px;
+}
+

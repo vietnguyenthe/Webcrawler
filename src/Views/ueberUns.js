@@ -10,9 +10,15 @@ export default class ueberUns extends Component {
     render() {
         return (
             <div>
-                <h2>Über uns</h2>
                 <Row>
-                    <Col sm={9}>
+                    <Col/>
+                    <Col sm={8}>
+                    <h2>Über uns</h2>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col/>
+                    <Col sm={8}>
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                             invidunt ut
                             labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
