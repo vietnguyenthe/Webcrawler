@@ -44,7 +44,7 @@ export default class Preiseingabe extends Component{
                     <h5 className="text-center"> Preiseingabe</h5>
                     <h6 className="text-center  ">Trage die Preise für die jeweilige PLZ ein</h6>
 
-                <form >
+                <form method="post">
                         <div className="form-group col-lg-6 col-sm-12">
                             <label for="text">Preis für 2700 Liter</label>
                             <input type="number" value={this.props.preis2700Liter} class="form-control" name="preis2700Liter" onChange={this.myChangeHandler}/>

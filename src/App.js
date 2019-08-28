@@ -15,6 +15,10 @@ import eingabeUnternehmen from "./Views/eingabeUnternehmen";
 import preiseingabe from "./Views/preiseingabe";
 import StickyFooter from 'react-sticky-footer';
 import login from "./Views/login"
+import gasbus1 from "./gasbus1.jpg"
+import Image from "react-bootstrap/Image";
+import kazim from "./pictures/kazim-foto.jpg";
+import Container from "react-bootstrap/Container";
 
 
 export default class App extends Component {
@@ -39,10 +43,13 @@ export default class App extends Component {
                         </Navbar.Collapse>
                     </Navbar>
 
-                    <Jumbotron fluid>
-                        <h1 className="header">Willkommen bei fluessiggas-vergleich.de</h1>
-                    </Jumbotron>
-
+               <div className="containerBild">
+                    <Image style={{width: "100%"}} className="rounded mx-auto d-block"
+                           src={gasbus1}/>
+                           <div className="textBlock">
+                               <p>Willkommen bei fluessiggas-vergleich.de !</p>
+                           </div>
+               </div>
 
                         <div className="content">
                             <Route exact path={"/"} component={kunden}/>

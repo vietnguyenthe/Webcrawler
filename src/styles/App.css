@@ -6,6 +6,23 @@
     margin: 0 auto;
 }
 
-.NavLink{
+.NavLink {
     background-color: black;
+}
+
+.containerBild {
+    position: relative;
+}
+
+.textBlock {
+    position: absolute; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    top: 0;
+    font-size: 70px;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.3); /* Black background with 0.5 opacity */
+    color: white; /* Grey text */
+    width: 100%; /* Full width */
+    padding: 60px; /* Some padding */
+    text-align: center;
 }
