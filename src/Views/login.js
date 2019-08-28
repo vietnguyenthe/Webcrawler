@@ -71,7 +71,7 @@ export default class Login extends Component {
                                         <div className="input-group-prepend">
                                             <span className="input-group-text"><i className="fas fa-key"></i></span>
                                         </div>
-                                        <input type="text" className="form-control" name="loginPasswort"
+                                        <input type="password" className="form-control" name="loginPasswort"
                                                placeholder="Passwort"
                                                value={this.props.loginPasswort} onChange={this.myChangeHandler}/>
                                     </div>
