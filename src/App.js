@@ -47,7 +47,7 @@ export default class App extends Component {
                     <Image style={{width: "100%"}} className="rounded mx-auto d-block"
                            src={gasbus1}/>
                            <div className="textBlock">
-                               <p>Willkommen bei fluessiggas-vergleich.de !</p>
+                               <p>Willkommen bei fluessiggas-vergleich.de</p>
                            </div>
                </div>
 
