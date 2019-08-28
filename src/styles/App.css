@@ -42,17 +42,25 @@
 }
 
 .preisvergleich {
-    margin: 0;
+    margin-left: 100px;
+    margin-right: 100px;
     padding: .3rem;
-    background-color: #eee;
+    background-color: lightgrey;
     font: 1rem 'Fira Sans', sans-serif;
+}
+
+.borderText{
+    border-style:solid;
+    border-color: blue;
+    margin-right: 35%;
+    margin-left: 35%;
 }
 
 .preisvergleich > h1,
 .anbieterDaten {
     margin: .5rem;
     padding: .3rem;
-    font-size: 1.2rem;
+    text-align: center;
 }
 
 .anbieterDaten {
