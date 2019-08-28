@@ -65,7 +65,7 @@ export default class Login extends Component {
                                         </div>
                                         <input type="text" className="form-control" name="loginName"
                                                placeholder="Benutzername"
-                                               value={this.props.loginName} onChange={this.myChangeHandler}/>
+                                               value={this.props.loginName} onChange={this.myChangeHandler} required="required"/>
                                     </div>
                                     <div className="input-group form-group">
                                         <div className="input-group-prepend">
@@ -73,7 +73,7 @@ export default class Login extends Component {
                                         </div>
                                         <input type="password" className="form-control" name="loginPasswort"
                                                placeholder="Passwort"
-                                               value={this.props.loginPasswort} onChange={this.myChangeHandler}/>
+                                               value={this.props.loginPasswort} onChange={this.myChangeHandler} required="required"/>
                                     </div>
                                     <div className="form-group">
                                         <button target="einlogen" type="submit" className="btn btn-primary mt-2 mr-1"
