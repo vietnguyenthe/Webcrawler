@@ -19,7 +19,7 @@ export default class Preiseingabe extends Component{
     }
 
     mySubmitHandler = (event) => {
-        event.preventDefault();
+        //event.preventDefault();
         console.log(this.state)
         axios.post('http://localhost:8080/preiseingabe', this.state)
             .then(response => {

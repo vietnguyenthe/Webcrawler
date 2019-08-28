@@ -18,8 +18,22 @@ export default class kunden extends Component {
             behaelter: "",
             plz: "",
             anbieter:[],
+            intervalId: 0
         };
     }
+
+    scrollStep() {
+        if (window.pageYOffset === 0) {
+            clearInterval(this.state.intervalId);
+        }
+        window.scroll(0, window.pageYOffset - this.props.scrollStepInPx);
+    }
+
+    scrollToTop() {
+        let intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs);
+        this.setState({ intervalId: intervalId });
+    }
+
 
     handleChange = e => {
         this.setState({[e.target.name]: e.target.value})
@@ -54,6 +68,7 @@ export default class kunden extends Component {
             .then(response => {
                 console.log(response)
                 this.setState({anbieter: response.data})
+                this.scrollToTop()
             })
             /*         .then(payload => {
                          payload.map(firma => {
@@ -180,3 +195,5 @@ export default class kunden extends Component {
         )
     }
 }
+
+
