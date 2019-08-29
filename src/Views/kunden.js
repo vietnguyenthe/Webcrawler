@@ -172,8 +172,9 @@ export default class kunden extends Component {
                                     <InputGroup.Prepend>
                                         <InputGroup.Text id="basic-addon1">PLZ</InputGroup.Text>
                                     </InputGroup.Prepend>
-                                    <input type="number" aria-describedby="basic-addon1" name="plz" required="required"
-                                           onChange={this.handleChange} value={plz} className="form-control"/>
+                                    <input type="number" only-numbers aria-describedby="basic-addon1" name="plz" required="required"
+                                           onChange={this.handleChange} value={plz} className="form-control"
+                                    />
                                 </InputGroup>
                             </Col>
                             <Col/>

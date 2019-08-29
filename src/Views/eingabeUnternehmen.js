@@ -24,14 +24,14 @@ export default class eingabeUnternehmen extends Component {
     }
 
     mySubmitHandler = (event) => {
-        //event.preventDefault();
+        event.preventDefault();
         console.log(this.state)
         axios.post('http://localhost:8080/kontaktUnternehmen', this.state)
             .then(response => {
                 console.log(response)
                 if(response.data=="erfolgreich"){
                     alert("Ihre Nachricht wurde erfolgreich übermittelt. Wir werden uns zeitnah bei Ihnen melden!")
-                } else if(response.data == "leer"){
+                } else if(response.data == "fehlgeschlagen"){
                     alert("Fehlgeschlagen! Bitte füllen Sie alle Felder aus.")
                 }
             })
@@ -50,7 +50,6 @@ export default class eingabeUnternehmen extends Component {
         return (
 
             <div>
-
                 <Card className="card-central-kontaktformular">
                     <Card.Header><h3>Kontaktformular</h3></Card.Header>
                     <Card.Body>
