@@ -114,54 +114,54 @@ export default class eingabeUnternehmen extends Component {
                         <Card.Text>
                             <form method="POST">
                                 <div>
-                                    <div className="form-group  col-lg-6 col-sm-12">
+                                    <div className="form-group">
                                         <label htmlFor="text">Firmenname</label>
                                         <input type="text" className="form-control" name="firmennamen"
                                                value={this.props.firmennamen}
                                                onChange={this.myChangeHandler} required="required"/>
                                     </div>
-                                    <div className="form-group col-lg-6 col-sm-12 ">
+                                    <div className="form-group">
                                         <label htmlFor="text">Adresse</label>
                                         <input type="text" className="form-control" name="firmenadresse"
                                                value={this.props.firmenadresse}
                                                onChange={this.myChangeHandler} required="required"/>
                                     </div>
                                 </div>
-                                <div className="form-group col-lg-6 col-sm-12">
+                                <div className="form-group">
                                     <label htmlFor="email">PLZ</label>
                                     <input type="text" className="form-control" name="plz" value={this.props.plz}
                                            onChange={this.myChangeHandler} required="required"/>
                                 </div>
-                                <div className="form-group col-lg-6 col-sm-12">
+                                <div className="form-group">
                                     <label htmlFor="email">Ort</label>
                                     <input type="text" className="form-control" name="ort" value={this.props.ort}
                                            onChange={this.myChangeHandler} required="required"/>
                                 </div>
-                                <div className="form-group col-lg-6 col-sm-12">
+                                <div className="form-group">
                                     <label htmlFor="email">Kontaktperson</label>
                                     <input type="text" className="form-control" name="kontaktperson"
                                            value={this.props.kontaktperson}
                                            onChange={this.myChangeHandler} required="required"/>
                                 </div>
-                                <div className="form-group col-lg-6 col-sm-12">
+                                <div className="form-group">
                                     <label htmlFor="email">Betreff</label>
                                     <input type="text" className="form-control" name="betreff"
                                            value={this.props.betreff}
                                            onChange={this.myChangeHandler} required="required"/>
                                 </div>
 
-                                <div className="form-group col-lg-6 col-sm-12">
+                                <div className="form-group">
                                     <label htmlFor="email">Email</label>
                                     <input type="text" className="form-control" name="emailAdresse"
                                            value={this.props.email}
                                            onChange={this.myChangeHandler} required="required"/>
                                 </div>
-                                <div className="form-group col-lg-6 col-sm-12">
+                                <div className="form-group">
                                     <label htmlFor="pwd">Nachricht</label>
                                     <textarea className="form-control" name="nachricht" value={this.props.nachricht}
                                               onChange={this.myChangeHandler} rows="6" required="required"></textarea>
                                 </div>
-                                <div className="form-group col-lg-6 col-sm-12">
+                                <div className="form-group">
                                     <button type="submit" className="btn btn-primary" onClick={this.mySubmitHandler}>
                                         Abschicken
                                     </button>
@@ -170,6 +170,7 @@ export default class eingabeUnternehmen extends Component {
                         </Card.Text>
                     </Card.Body>
                 </Card>
+                <br/>
             </div>
 
         );
