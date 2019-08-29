@@ -47,10 +47,10 @@ export default class Preiseingabe extends Component{
         return (
             <div>
                 <Card className="card-central">
-                    <Card.Header><h3>Preiseingabe</h3></Card.Header>
+                    <Card.Header className="card-header-central"><h3>Preiseingabe</h3></Card.Header>
                     <Card.Body>
-                        <Card.Title>Trage die Preise für die jeweilige PLZ ein</Card.Title>
-                        <Card.Text>
+                        <Card.Title>Trage die Preise für die jeweilige PLZ ein:</Card.Title>
+                        <Card.Text className="card-text-central">
                         <form>
                             <div className="form-group col-lg-6 col-sm-12">
                                 <label htmlFor="text">Preis (ct/l) für 2700 Liter</label>
