@@ -50,7 +50,6 @@ export default class App extends Component {
                                <p>Willkommen bei fluessiggas-vergleich.de</p>
                            </div>
                </div>
-                    <br/>
 
                         <div className="content">
                             <Route exact path={"/"} component={kunden}/>

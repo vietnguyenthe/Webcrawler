@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 
 
 
+
 export default class eingabeUnternehmen extends Component {
     constructor(props){
         super(props)
@@ -48,9 +49,10 @@ export default class eingabeUnternehmen extends Component {
     render() {
         const {firmennamen, firmenadresse, plz,ort, kontaktperson, emailAdresse, betreff, nachricht} = this.state
         return (
-
             <div>
-
+            <div className="bg">
+                <br/>
+                <div className="nicht">
                 <Card className="card-central-kontaktformular">
                     <Card.Header><h3>Kontaktformular</h3></Card.Header>
                     <Card.Body>
@@ -115,9 +117,10 @@ export default class eingabeUnternehmen extends Component {
                         </Card.Text>
                     </Card.Body>
                 </Card>
+                </div>
                 <br/>
             </div>
-
+            </div>
         );
     }
 }
