@@ -31,6 +31,8 @@ export default class eingabeUnternehmen extends Component {
                 console.log(response)
                 if(response.data=="erfolgreich"){
                     alert("Ihre Nachricht wurde erfolgreich übermittelt. Wir werden uns zeitnah bei Ihnen melden!")
+                } else if(response.data == "leer"){
+                    alert("Fehlgeschlagen! Bitte füllen Sie alle Felder aus.")
                 }
             })
 

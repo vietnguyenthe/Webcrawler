@@ -29,6 +29,8 @@ export default class Preiseingabe extends Component{
                     alert("Daten wurden erfolgreich in die Datenbank übertragen.")
                 } else if(response.data == "fehlgeschlagen"){
                     alert("Fehlgeschlagen! Daten wurden leider NICHT übertragen.")
+                } else if(response.data == "leer"){
+                    alert("Fehlgeschlagen! Bitte füllen Sie alle Felder aus.")
                 }
             })
 
@@ -51,7 +53,7 @@ export default class Preiseingabe extends Component{
                     <Card.Body>
                         <Card.Title>Trage die Preise für die jeweilige PLZ ein:</Card.Title>
                         <Card.Text className="card-text-central">
-                        <form>
+                        <form required="required">
                             <div className="form-group col-lg-6 col-sm-12">
                                 <label htmlFor="text">Preis (ct/l) für 2700 Liter</label>
                                 <input type="number" value={this.props.preis2700Liter} className="form-control"
@@ -65,7 +67,7 @@ export default class Preiseingabe extends Component{
                             <div class="form-group col-lg-6 col-sm-12">
                                 <label for="text">Preis (ct/l) für 6400 Liter</label>
                                 <input type="number" value={this.props.preis6400Liter}  className="form-control"
-                                       name="preis6400Liter" onChange={this.myChangeHandler} required="required"/>
+                                       name="preis6400Liter" onChange={this.myChangeHandler} required/>
                             </div>
                             <div className="form-group col-lg-6 col-sm-12">
                                 <label for="text">Postleitzahl</label>
