@@ -128,3 +128,18 @@ input:focus{
     margin-left: 4px;
 }
 
+.card-central{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    height: 550px;
+    width: 550px;
+}
+
+.card-central-kontaktformular{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    height: 1050px;
+    width: 600px;
+}

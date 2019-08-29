@@ -15,7 +15,7 @@ import eingabeUnternehmen from "./Views/eingabeUnternehmen";
 import preiseingabe from "./Views/preiseingabe";
 import StickyFooter from 'react-sticky-footer';
 import login from "./Views/login"
-import gasbus1 from "./gasbus1.jpg"
+import gasbus1 from "./pictures/gasbus1.jpg"
 import Image from "react-bootstrap/Image";
 import kazim from "./pictures/kazim-foto.jpg";
 import Container from "react-bootstrap/Container";
